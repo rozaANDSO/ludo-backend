@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  auth-redis:
+    image: redis:6.2-alpine
+    ports:
+      - "4000:6379"
+    restart: always
+    volumes:
+      - ./redis-data:/data
+
+  mongodb:
+    image: mongo:6-jammy
+    ports:
+      - '27017:27017'
